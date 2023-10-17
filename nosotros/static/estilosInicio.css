@@ -1,0 +1,139 @@
+.producto{
+  background-color:  hsl(196, 100%, 45%);
+  border-radius: 10px;
+  display: inline-block; 
+  margin: 1rem;
+  padding: 1rem;
+  width: 20%;
+  color:black;
+  margin-left: 0;
+  vertical-align: top;
+  margin-top: 50px;
+  padding: 1rem;
+  text-align: left;
+}
+
+.producto img {
+  width: 100%; 
+  height: auto; 
+  margin-right: 0.5rem; 
+}
+
+.producto p {
+  margin: 0; 
+  width: 100%;
+  margin-bottom: 0.9rem;
+}
+
+.ver_mas_bottom{
+  background-color:hsl(196, 100%, 45%);
+  border-radius: 50%;
+  width: 50px; 
+  height: 50px;
+  color:black;
+  justify-content: center; 
+  align-items: center;
+  font-size: 2rem;
+  display: inline-block;
+  text-align: center;
+  margin-top: 220px;
+}
+
+.galeria_preview {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+}
+
+.foto {
+  display: flex;
+  gap: 10px; 
+}
+
+.foto img {
+  width: 450px; 
+  height: auto;
+  border-radius: 10px;
+}
+
+.ver_galeria {
+  background-color: hsl(196, 100%, 45%);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  display: inline-block;
+  text-align: center;
+  margin-right: 400px; 
+  margin-top: 220px;
+}
+
+
+
+.comentarios {
+    width: 70%;
+    border: 1px solid #ccc; 
+    margin: 10px; 
+    padding: 10px; 
+    margin-left: 0;
+    background-color: #f9f9f9; 
+  }
+  
+  .comentarios p {
+    margin: 5px 0; 
+    font-size: 1.2em; 
+    color: #333; 
+  }
+  
+  .comentarios p:nth-child(1) {
+    font-size: 1.4em;
+    font-weight: bold; 
+  }
+  
+  .comentarios p:nth-child(3) {
+    font-size: 0.7em; 
+    color: #888; 
+  }
+
+
+.comentarios-form {
+  background-color: hsl(196, 100%, 45%);
+  border-radius: 10px;
+  padding: 20px;
+  width: 1000px; 
+  height: 100px;
+  margin: 0 auto; 
+  text-align: center; 
+  margin-left: 0; 
+}
+
+.comentarios-form textarea {
+  display: inline-block;
+  width: 950px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  resize: vertical; 
+}
+
+.comentarios-form button {
+  background-color: hsl(196, 100%, 45%);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0; 
+  float: left; 
+  font-size: 1em;
+}
+
+.comentarios-form button:hover {
+  color: white;
+}
+

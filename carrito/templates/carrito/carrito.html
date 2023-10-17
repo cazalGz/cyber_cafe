@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/estilosCarrito.css' %}">
+
+<h2>Carrito de Compras</h2>
+<p>Solo puedes comprar un total de 3 productos</p>
+<div class="compra">
+    <ul>
+        {% for item in items %}
+            <li>
+                {{ item.producto.nombre }} - Cantidad: {{ item.cantidad }}
+                <a href="{% url 'eliminar_del_carrito' item.producto.id %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p>Importe total: ${{ total }}</p>
+</div>
+
+<div class="seguir_comprando">
+    <a href="{% url 'menu' %}">Seguir Comprando</a>
+</div>
+
+<div class="comprar">
+    <a href="{% url 'hacer_compra' %}">Comprar</a>
+</div>
+
+
+
+{% endblock %}

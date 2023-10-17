@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/estilosNosotros.css' %}">
+<h2>Quienes somos:</h2>
+
+<div class="descripcion">
+{% for nosotros in nosotros %}
+    <p>{{nosotros.descripción}}</p>
+{% endfor %}
+</div>
+
+<h3>Contacto:</h3>
+
+<div class="contacto">
+{% for contacto in contacto %}
+<ul>
+    <li>
+        <a href="https://www.instagram.com/" >Instagram: {{ contacto.instagram }}</a>
+    </li>
+    <li>
+        <a href="https://www.instagram.com/" >Facebook: {{ contacto.facebook }}</a>
+    </li>
+    <li>
+        <a href="#" >WhatsApp: {{ contacto.whatsapp }}</a>
+    </li>
+    <li>
+        <p>Teléfono: {{ contacto.nrotelefono }}</p>
+    </li>
+    <li>
+        <p>Correo: {{ contacto.correo }}</p>
+    </li>
+</ul>
+{% endfor %}
+</div>
+
+
+<h3>Galeria</h3>
+<div class="foto">
+    {% for galeria in galeria %}
+        <img  src="{{galeria.foto.url}}" alt="imagen {{galeria}}" >
+    {% endfor %}
+</div>
+
+{% endblock %}

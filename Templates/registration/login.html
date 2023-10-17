@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static '/estilosLogin.css' %}">
+
+  <div class="sesion">
+    <h2>Iniciar Sesión</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+  
+{% endblock %}

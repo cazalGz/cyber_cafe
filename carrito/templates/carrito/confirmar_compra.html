@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/estilosConfirmar_compra.css' %}">
+
+  <h2>Tu compra se ha realizado con éxito!!</h2>
+  <div class="compra">
+    <h3>Detalles de la Compra:</h3>
+    <ul>
+      <li>Número de Compra: {{ compra.id }}</li>
+      <li>Usuario: {{ compra.usuario.username }}</li>
+      <li>Fecha: {{ compra.fecha }}</li>
+      <li>Monto Total: ${{ compra.monto_total }}</li>
+    </ul>
+  </div>  
+  
+  <div class="boton_menu">
+    <a href="{% url 'menu' %}">Volver al menú</a>
+  </div>
+
+  
+{% endblock %}

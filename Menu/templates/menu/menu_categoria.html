@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/estilosMenu.css' %}">
+
+<h2>Menú:</h2>
+<nav>
+    <div class="all_categories">
+        <a href="{% url 'menu' %}">Todos los productos</a>
+    </div>
+    <div class="categoria_actual">
+        <p>{{ categoria_actual.categoria }}</p>
+    </div>
+    
+</nav>
+
+{% for producto in productos %}
+<div class="producto">
+    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+    <h3>{{ producto.nombre }}</h3>
+    <p>{{ producto.descripción }}</p>
+    <p>Precio: ${{ producto.precio }}</p>
+    <a href="{% url 'agregar_al_carrito' producto.id %}" class="btn-agregar">Añadir al Carro</a>
+</div>
+    
+{% endfor %}
+{% endblock %}

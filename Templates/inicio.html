@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static '/estilosInicio.css' %}">
+
+<h1>Cyber-cafe genérico</h1>
+
+<h2>Productos</h2>
+<div class="menu_preview">
+    {% for producto in productos|slice:":3" %} 
+        <div class="producto">
+            <h3>{{ producto.nombre }}</h3>
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+            <p>{{ producto.descripción }}</p>
+            <p>Precio: ${{ producto.precio }}</p>
+            
+        </div>
+    {% endfor %}
+    <div class="ver_mas_bottom ">
+        <a href="{% url 'menu' %}"  >+</a>
+    </div>
+</div>   
+
+
+
+<h2>Galeria</h2>
+<div class="galeria_preview">
+    <div class="foto">
+        {% for galeria in galeria|slice:":2" %}
+            <img  src="{{galeria.foto.url}}" alt="imagen {{galeria}}" >
+        {% endfor %}
+    </div>
+    <div class="ver_galeria ">
+        <a href="{% url 'nosotros' %}"  >+</a>
+    </div>
+</div>   
+
+
+<h2>Comentarios</h2>
+    {% if user.is_authenticated %}
+        <div class="comentarios-form">
+            <form method="post" action="{% url 'crear_comentario' %}">
+                {% csrf_token %}
+                <textarea name="texto" placeholder="Deja tu comentario"></textarea>
+                <button type="submit">Publicar comentario</button>
+            </form>
+        </div>
+    {% endif %}
+
+    {% for comentario in comentarios %}
+        <div class="comentarios"> 
+            <p>{{ comentario.usuario }} </p>
+            <p>{{ comentario.texto }} </p>
+            <p>{{ comentario.fecha }} </p>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
